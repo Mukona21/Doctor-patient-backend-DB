@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "a543a395-117a-4827-80af-16082f1cc9e8",
+		"name": "DocSeek",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22888526"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignUp-DOC",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Doctor Ahindra\",\r\n    \"email\":\"ahindra@mail.com\",\r\n    \"password\":\"passcode123\",\r\n    \"confirmPassword\":\"passcode123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/doctor/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"doctor",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp-PAT",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"PAT Ahindra\",\r\n    \"email\":\"ahindra@mail.com\",\r\n    \"password\":\"passcode123\",\r\n    \"confirmPassword\":\"passcode123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/patient/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"patient",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn-DOC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZmRmYzJmMzhlN2RmM2Q4MDc1ZWE2NyIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2MTE1NzkxN30.9FqjDuESMX3KSv3B3gS8sQuf7-LcFs6gD0xiUz8Is3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahindra@mail.com\",\r\n    \"password\": \"passcode123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/doctor/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"doctor",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn-PAT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZmRmYzJmMzhlN2RmM2Q4MDc1ZWE2NyIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2MTE1NzkxN30.9FqjDuESMX3KSv3B3gS8sQuf7-LcFs6gD0xiUz8Is3o",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahindra@mail.com\",\r\n    \"password\": \"passcode123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/patient/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"patient",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateAccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTliMTVjMjU0OGJhNDAxNDJjNTAwMSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2MjYyODIwNCwiZXhwIjoxNjYzMjU4MjA0fQ.kBoWLHgpoBGDwY2dZqhgKghQ2HIu4OlJ1KL0HHaZEeM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"doctor\": \"632f92b97b29c625b94b26ae\",\r\n    \"patient\": \"632f931f31c089350a524ac4\",\r\n    \"date\": \"11/11/22\",\r\n    \"time\": \"13:00\",\r\n    \"prenote\": \"Mental Evaluation\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete-DOC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"presciption\": \"maybe tone down a bit of narcissism!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/complete/632f9fa14538431708ba6df1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"complete",
+								"632f9fa14538431708ba6df1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CANcel-DOC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/cancel/632f9fa14538431708ba6df1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"cancel",
+								"632f9fa14538431708ba6df1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review-PAT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\": \"wellspoken & attentive!\",\r\n    \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/review/632f9fa14538431708ba6df1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"review",
+								"632f9fa14538431708ba6df1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PAT-all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/patient/632f931f31c089350a524ac4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"patient",
+								"632f931f31c089350a524ac4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DOC-all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/appoint/doctor/632f92b97b29c625b94b26ae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"appoint",
+								"doctor",
+								"632f92b97b29c625b94b26ae"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DOCTOR",
+			"item": [
+				{
+					"name": "OnBoard-DOC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MmI5N2IyOWM2MjViOTRiMjZhZSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI1NSwiZXhwIjoxNjY0MTQ4NjU1fQ.EzvmmSY8UuWdUsWrkFjMkqpIPe-ubUj_OelN23VcAwI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahindra@mail.com\",\r\n    \"time\": [\r\n        \"10:00\",\r\n        \"10:30\",\r\n        \"11:00\",\r\n        \"11:30\",\r\n        \"12:00\",\r\n        \"12:30\",\r\n        \"13:00\",\r\n        \"13:30\",\r\n        \"14:00\",\r\n        \"14:30\"\r\n    ],\r\n    \"days\": [\r\n        \"Monday\",\r\n        \"Wednesday\",\r\n        \"Friday\"\r\n    ],\r\n    \"qualification\": \"M.D.\",\r\n    \"speciality\": \"Psychiatrist\",\r\n    \"hospital\": \"Allen Kong Central\",\r\n    \"experience\": 1.5,\r\n    \"fee\": 99,\r\n    \"city\": \"NewYork\",\r\n    \"country\": \"United States\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/doctor/onboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"onboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show-ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MmI5N2IyOWM2MjViOTRiMjZhZSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI1NSwiZXhwIjoxNjY0MTQ4NjU1fQ.EzvmmSY8UuWdUsWrkFjMkqpIPe-ubUj_OelN23VcAwI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/doctor/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchBY-name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MmI5N2IyOWM2MjViOTRiMjZhZSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI1NSwiZXhwIjoxNjY0MTQ4NjU1fQ.EzvmmSY8UuWdUsWrkFjMkqpIPe-ubUj_OelN23VcAwI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/doctor/name/:name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"name",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchBY-city",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MmI5N2IyOWM2MjViOTRiMjZhZSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI1NSwiZXhwIjoxNjY0MTQ4NjU1fQ.EzvmmSY8UuWdUsWrkFjMkqpIPe-ubUj_OelN23VcAwI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/doctor/city/:city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"city",
+								":city"
+							],
+							"variable": [
+								{
+									"key": "city",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchBY-speciality",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MmI5N2IyOWM2MjViOTRiMjZhZSIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI1NSwiZXhwIjoxNjY0MTQ4NjU1fQ.EzvmmSY8UuWdUsWrkFjMkqpIPe-ubUj_OelN23VcAwI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/doctor/speciality/:speciality",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"doctor",
+								"speciality",
+								":speciality"
+							],
+							"variable": [
+								{
+									"key": "speciality",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PATIENT",
+			"item": [
+				{
+					"name": "OnBoard-PAT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmY5MzFmMzFjMDg5MzUwYTUyNGFjNCIsImVtYWlsIjoiYWhpbmRyYUBtYWlsLmNvbSIsImlhdCI6MTY2NDA2MjI3MCwiZXhwIjoxNjY0MTQ4NjcwfQ.Ard0LSdlzZDT6PcEFCiWYtWsFuTVkt5yTjvtYEBKbZE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahindra@mail.com\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"conditions\": [\"Asthma\"],\r\n    \"lookingfor\": [\"General Physician\",\"Endocrinologist\"],\r\n    \"city\": \"London\",\r\n    \"country\": \"England\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/patient/onboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"patient",
+								"onboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
